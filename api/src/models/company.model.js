@@ -113,7 +113,7 @@ const companySchema = new mongoose.Schema({
     autoSubmitDCRSunday :{ type: Boolean, required: false }, 
     isDCRProgressive : { type: Boolean, required: false }, 
     ismefExist: { type: Boolean, required: false },
-    status: { type: Boolean, required: false },
+    status: { type: Boolean, required: false,default:true },
     target : {
         targetInfo : { type: String, required: false }, 
         targetDuration : { type: String, required: false }, 

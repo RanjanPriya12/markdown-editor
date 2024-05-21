@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const bcrypt = require("bcrypt");
 
 const userSchema = new mongoose.Schema({
     companyName: { type: String, required: true },
@@ -10,12 +11,12 @@ const userSchema = new mongoose.Schema({
     address: { type: Number, required: false },
     dateOfBirth: { type: Date, required: false },
     dateOfAnniversary: { type: Date, required: false },
-    dateOfJoining: { type: Date, required: false },
+    dateOfJoining: { type: Date, required: true },
     aadhaar: { type: String, required: false, minlength: 12, maxlength: 12 },
     PAN: { type: String, required: false },
-    mobile: { type: String, required: false },
+    mobile: { type: String, required: false,unique:true },
     employeeCode: { type: String, required: true },
-    email: { type: String, required: true },
+    email: { type: String, required: true,unique:true },
     username: { type: String, required: true, unique: true },
     password: { type: String, required: true },
     divisionId: { type: mongoose.Schema.Types.ObjectId, ref: 'division' },
@@ -30,6 +31,12 @@ const userSchema = new mongoose.Schema({
 {
     timestamps: true,
     versionKey: false
+});
+
+userSchema.pre("save", async function (next) {
+    const hash = bcrypt.hashSync(this.password, 10);
+    this.password = hash;
+    next();
 });
 
 const User = new mongoose.model('user', userSchema);
