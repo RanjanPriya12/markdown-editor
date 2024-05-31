@@ -1,14 +1,14 @@
 const { validationResult, check } = require("express-validator");
 
-export const registerValidation = [
-    check("companyName")
-        .not()
-        .isEmpty()
-        .withMessage("Comapny name is required!")
-        .exists()
-        .isString()
-        .withMessage("Comapny name should only contain alphabetic character!")
-        .trim(),
+ const registerValidation = [
+    // check("companyName")
+    //     .not()
+    //     .isEmpty()
+    //     .withMessage("Comapny name is required!")
+    //     .exists()
+    //     .isString()
+    //     .withMessage("Comapny name should only contain alphabetic character!")
+    //     .trim(),
     check("name")
         .not()
         .isEmpty()
@@ -107,3 +107,4 @@ export const registerValidation = [
         next();
     }
 ]
+module.exports = {registerValidation}

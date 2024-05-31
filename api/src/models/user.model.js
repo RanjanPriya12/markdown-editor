@@ -2,13 +2,13 @@ const mongoose = require('mongoose');
 const bcrypt = require("bcrypt");
 
 const userSchema = new mongoose.Schema({
-    companyName: { type: String, required: true },
+    companyName: { type: String, required: false },
     status: { type: Boolean, required: true,default:true },
     name:{ type: String, required: true },
     companyId: { type: mongoose.Schema.Types.ObjectId, ref: 'company' },
     age: { type: Number, required: false },
     gender: { type: String, required: true, enum: ["Female", "Male"] },
-    address: { type: Number, required: false },
+    address: { type: String, required: false },
     dateOfBirth: { type: Date, required: false },
     dateOfAnniversary: { type: Date, required: false },
     dateOfJoining: { type: Date, required: true },

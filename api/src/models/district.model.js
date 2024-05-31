@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const districtSchema = new mongoose.Schema({
     districtName: { type: String, required: true },
+    districtCode: { type: String, required: true },
     status: { type: Boolean, required: true },
     assignedTo: { type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'company' }], default: [], required: true },
     enableFor: { type: String, required: true },

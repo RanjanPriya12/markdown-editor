@@ -4,7 +4,7 @@ const addCompany = async (req, res) => {
     try {
         let company = await CompanyModel.findOne({ companyName: req.body.companyName });
         if (company) {
-            return res.status(401).send({ status: "fail", message: "Company already exists!" });
+            return res.status(409).send({ status: "fail", message: "Company already exists!" });
         }
         company = await CompanyModel.create(req.body);
         if (!company) {

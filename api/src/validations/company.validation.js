@@ -1,14 +1,14 @@
 const { validationResult, check } = require("express-validator");
 
-export const companyValidation = [
-    check("companyName")
-        .not()
-        .isEmpty()
-        .withMessage("Comapny name should not be blank!")
-        .exists()
-        .isString()
-        .withMessage("Comapny name should only contain alphabetic character!")
-        .trim(),
+ const companyValidation = [
+    // check("companyName")
+    //     .not()
+    //     .isEmpty()
+    //     .withMessage("Comapny name should not be blank!")
+    //     .exists()
+    //     .isString()
+    //     .withMessage("Comapny name should only contain alphabetic character!")
+    //     .trim(),
     check("maxUser")
         .not()
         .isEmpty()
@@ -29,3 +29,4 @@ export const companyValidation = [
         next();
     }
 ]
+module.exports = {companyValidation}
