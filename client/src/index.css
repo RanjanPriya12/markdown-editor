@@ -1,0 +1,50 @@
+.editor-container{
+  margin-bottom: 1rem;
+}
+.custom-editor .cm-editor {
+  background-color: #2b2b2b !important;
+  color: white !important;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.custom-editor .cm-content {
+  color: white !important;
+}
+
+.custom-editor .cm-cursor {
+  border-left: 2px solid white !important;
+}
+
+.toolbar {
+  margin-bottom: 10px;
+}
+
+.btn {
+  padding: 5px 10px;
+  margin-right: 5px;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.highlight-btn {
+  background-color: #ffcc00;
+  color: black;
+}
+
+.reset-btn {
+  background-color: #ff4d4d;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.cm-content mark {
+  background-color: yellow;
+  color: black;
+}
